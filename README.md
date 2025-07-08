@@ -70,6 +70,6 @@ Open http://oauth2-proxy.localtest.me:4180 in your browser
 ![Genitos](./images/genitos.png)
 
 # Copyrights
-2025 Alic.ai Labs.
+2025 Alic.ai Lab. (All Click AI Lab.)
 
 Please contact us at alicai.lab@gmail.com

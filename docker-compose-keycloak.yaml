@@ -19,7 +19,7 @@ services:
 
   aion:
     container_name: aion
-    image: myhub.ksc.re.kr/myksc/aider:latest
+    image: myhub.ksc.re.kr/myksc/aion:latest
     hostname: aion
     volumes:
       - "./config.yaml:/data/config.yaml"
