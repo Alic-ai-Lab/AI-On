@@ -35,7 +35,7 @@ services:
       DB_NAME: aion
       DB_USER: aion
       DB_PASSWORD: aion
-      KUBE_MASTER_IP: 150.183.158.151
+      KUBE_MASTER_IP: <kubernetes master IP>
     depends_on:
       - mariadb
 
