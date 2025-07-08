@@ -64,7 +64,7 @@ Run the following commands to download the files
 git clone https://github.com/Alic-ai-Lab/AI-On.git  
 cd AI-On
 ```
-Modify config.yaml using kubernetes configuration file (~/.kube/config) and docker-compose-light.yaml.
+Modify config.yaml using kubernetes configuration file (~/.kube/config) and docker-compose-keycloak.yaml.
 
 `KUBE_MASTER_IP: <kubernetes master IP>
 `
