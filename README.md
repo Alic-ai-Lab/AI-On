@@ -28,9 +28,21 @@ AI-On is a Kubernetes-based web service portal jointly developed by KISTI (Korea
 
 * basic mode
 
+Run the following commands to download the files
+
 ```python
 git clone https://github.com/Alic-ai-Lab/AI-On.git  
-cd AI-On  
+cd AI-On
+```
+
+Modify config.yaml using kubernetes configuration file (~/.kube/config) and docker-compose-light.yaml.
+
+`KUBE_MASTER_IP: <kubernetes master IP>
+`
+
+Run the following docker containers
+
+```python
 docker compose -f docker-compose-light.yaml up  
 ```
 Open http://localhost:8080 in your browser
@@ -46,11 +58,20 @@ Modify the hosts (/etc/hosts) file.
 127.0.0.1 oauth2-proxy.localtest.me
 ```
 
-Run the following commands.
+Run the following commands to download the files
 
 ```python
 git clone https://github.com/Alic-ai-Lab/AI-On.git  
-cd AI-On  
+cd AI-On
+```
+Modify config.yaml using kubernetes configuration file (~/.kube/config) and docker-compose-light.yaml.
+
+`KUBE_MASTER_IP: <kubernetes master IP>
+`
+
+Run the following docker containers
+
+```python
 docker compose -f docker-compose-keycloak.yaml up
 ```
 Open http://oauth2-proxy.localtest.me:4180 in your browser
