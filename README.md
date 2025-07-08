@@ -37,6 +37,8 @@ Open http://localhost:8080 in your browser
 
 * with external authentication (keycloak + oauth2-proxy)
 
+By utilizing Keycloak and oauth2-proxy, it is possible to provide services with authentication. Configuration details for oauth2-proxy can be found at: https://github.com/oauth2-proxy/oauth2-proxy/tree/master/contrib/local-environment.
+
 ```python
 git clone https://github.com/Alic-ai-Lab/AI-On.git  
 cd AI-On  
@@ -47,7 +49,7 @@ Open http://oauth2-proxy.localtest.me:4180 in your browser
 * administrator: admin/password
 * user: user/password
 
-By utilizing Keycloak and oauth2-proxy, it is possible to provide services with authentication. Configuration details for oauth2-proxy can be found at: https://github.com/oauth2-proxy/oauth2-proxy/tree/master/contrib/local-environment.
+
 
 # Demo
 
@@ -59,4 +61,6 @@ By utilizing Keycloak and oauth2-proxy, it is possible to provide services with 
 ![Genitos](./images/genitos.png)
 
 # Copyrights
-2025 Alic.ai Labs
+2025 Alic.ai Labs.
+
+Please contact us at alicai.lab@gmail.com
