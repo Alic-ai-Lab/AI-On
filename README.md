@@ -1,6 +1,10 @@
 # AI-On: Web Service Portal on kubernetes for AI
 
-AI-On is a Kubernetes-based web service portal jointly developed by KISTI and Genitos, aimed at providing services necessary for AI development, training, and deployment.
+
+![demo](./images/aion-demo.webp)
+
+
+AI-On is a Kubernetes-based web service portal jointly developed by KISTI (Korea Institute of Science and Technology Information) and Genitos, aimed at providing services necessary for AI development, training, and deployment.
 
 * Currently Available Service
 
@@ -44,6 +48,10 @@ Open http://oauth2-proxy.localtest.me:4180 in your browser
 * user: user/password
 
 By utilizing Keycloak and oauth2-proxy, it is possible to provide services with authentication. Configuration details for oauth2-proxy can be found at: https://github.com/oauth2-proxy/oauth2-proxy/tree/master/contrib/local-environment.
+
+# Demo
+
+* admin page
 
 # Developer
 
