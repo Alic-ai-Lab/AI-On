@@ -1,0 +1,45 @@
+services:
+  aion:
+    container_name: aion
+    image: myhub.ksc.re.kr/myksc/aider:latest
+    restart: unless-stopped
+    hostname: aion
+    volumes:
+      - "./config.yaml:/data/config.yaml"
+    ports:
+      - 8080:80/tcp
+    networks:
+      mariadb_net: {}
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: aion
+      DB_USER: aion
+      DB_PASSWORD: aion
+      KUBE_MASTER_IP: 150.183.158.153
+    depends_on:
+      - mariadb
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:11.3
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: aion
+      MYSQL_USER: aion
+      MYSQL_PASSWORD: aion
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      mariadb_net:
+        aliases:
+          - mariadb
+networks:
+  aion: {}
+  mariadb_net: {}
+
+volumes:
+  mariadb_data:

@@ -1,0 +1,89 @@
+services:
+  oauth2-proxy:
+    container_name: oauth2-proxy
+    image: quay.io/oauth2-proxy/oauth2-proxy:v7.9.0
+    command: --config /oauth2-proxy.cfg
+    hostname: oauth2-proxy
+    volumes:
+      - "./oauth2-proxy-keycloak.cfg:/oauth2-proxy.cfg"
+    restart: unless-stopped
+    ports:
+      - 4180:4180/tcp
+    networks:
+      keycloak: {}
+      aion: {}
+      oauth2-proxy: {}
+    depends_on:
+      - aion
+      - keycloak
+
+  aion:
+    container_name: aion
+    image: myhub.ksc.re.kr/myksc/aider:latest
+    hostname: aion
+    volumes:
+      - "./config.yaml:/data/config.yaml"
+    restart: unless-stopped
+    ports:
+      - 8080:80/tcp
+    networks:
+      mariadb_net: {}
+      oauth2-proxy: {}
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: aion
+      DB_USER: aion
+      DB_PASSWORD: aion
+      KUBE_MASTER_IP: 150.183.158.151
+    depends_on:
+      - mariadb
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:11.3
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: aion
+      MYSQL_USER: aion
+      MYSQL_PASSWORD: aion
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      mariadb_net:
+        aliases:
+          - mariadb
+
+  keycloak:
+    container_name: keycloak
+    image: keycloak/keycloak:25.0
+    hostname: keycloak
+    command:
+      - 'start-dev'
+      - '--http-port=9080'
+      - '--import-realm'
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import
+    environment:
+      KC_HTTP_PORT: 9080
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_STRICT_HTTPS: false
+    ports:
+      - 9080:9080/tcp
+    networks:
+      keycloak:
+        aliases:
+          - keycloak.localtest.me
+
+networks:
+  aion: {}
+  keycloak: {}
+  oauth2-proxy: {}
+  mariadb_net: {}
+
+volumes:
+  mariadb_data:
