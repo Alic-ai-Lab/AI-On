@@ -39,6 +39,15 @@ Open http://localhost:8080 in your browser
 
 By utilizing Keycloak and oauth2-proxy, it is possible to provide services with authentication. Configuration details for oauth2-proxy can be found at: https://github.com/oauth2-proxy/oauth2-proxy/tree/master/contrib/local-environment.
 
+Modify the hosts (/etc/hosts) file.
+
+```python
+127.0.0.1 keycloak.localtest.me
+127.0.0.1 oauth2-proxy.localtest.me
+```
+
+Run the following commands.
+
 ```python
 git clone https://github.com/Alic-ai-Lab/AI-On.git  
 cd AI-On  
