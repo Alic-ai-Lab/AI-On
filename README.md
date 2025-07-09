@@ -83,7 +83,12 @@ Open http://oauth2-proxy.localtest.me:4180 in your browser
 
 # Demo
 
+After setting up external authentication, signing in with the admin account will provide access to the administrator portal.
 * admin page
+
+![admin-portal](./images/admin-portal.png)
+
+
 
 # Developer
 
