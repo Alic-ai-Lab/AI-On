@@ -98,4 +98,4 @@ After setting up external authentication, signing in with the admin account will
 # Copyrights
 2025 Alic.ai Lab. (All Click AI Lab.)
 
-Please contact us at alicai.lab@gmail.com
+Please contact us using click [here](mailto:alicai.lab@gmail.com)
